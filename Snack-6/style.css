@@ -1,0 +1,14 @@
+.category {
+    display: inline-block;
+    border-radius: .625rem;
+    color: white;
+}
+.teachers {
+    background-color: grey;
+    padding: 1rem;
+}
+
+.pm {
+    background-color: green;
+    padding: 1rem;
+}
