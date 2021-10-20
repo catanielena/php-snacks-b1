@@ -52,13 +52,13 @@
             <?php foreach($posts as $date => $postList) {?>
                 <li>
                     <?= $date; ?>
-                    <ul>
-                        <?php foreach($postList as $post) {?>
-                            <h3><?= $post['title']; ?></h3>
+                    <?php foreach($postList as $post) {?>
+                        <h3><?= $post['title']; ?></h3>
+                        <ul>
                             <li><?= $post['author']; ?></li>
                             <li><?= $post['text']; ?></li>
-                        <?php }; ?>
-                    </ul>
+                        </ul>
+                    <?php }; ?>
                 </li>
             <?php }; ?>
         </ul>
