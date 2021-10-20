@@ -48,19 +48,15 @@
         <title>Snack3</title>
     </head>
     <body>
-        <ul>
-            <?php foreach($posts as $date => $postList) {?>
-                <li>
-                    <?= $date; ?>
-                    <?php foreach($postList as $post) {?>
-                        <h3><?= $post['title']; ?></h3>
-                        <ul>
-                            <li><?= $post['author']; ?></li>
-                            <li><?= $post['text']; ?></li>
-                        </ul>
-                    <?php }; ?>
-                </li>
-            <?php }; ?>
-        </ul>
+        <?php foreach($posts as $date => $postList) {?>
+            <h2><?= $date; ?></h2>
+                <?php foreach($postList as $post) {?>
+                    <h3><?= $post['title']; ?></h3>
+                    <ul>
+                        <li><?= $post['author']; ?></li>
+                        <li><?= $post['text']; ?></li>
+                    </ul>
+                <?php }; ?>
+        <?php }; ?>
     </body>
 </html>
