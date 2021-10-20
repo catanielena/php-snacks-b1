@@ -28,7 +28,25 @@ Olimpia Milano - Cantù | 55-60 -->
             'visitingTeamScore' => 88,
         ]
     ];
-    for($i=0; $i<count($matches); $i++) {
-        echo "{$matches[$i]['homeTeam']} - {$matches[$i]['visitingTeam']} | {$matches[$i]['homeTeamScore']}-{$matches[$i]['visitingTeamScore']}" . "<br>";
-    }
+    // for($i=0; $i<count($matches); $i++) {
+    //     echo "{$matches[$i]['homeTeam']} - {$matches[$i]['visitingTeam']} | {$matches[$i]['homeTeamScore']}-{$matches[$i]['visitingTeamScore']}" . "<br>";
+    // }
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>Le partite di oggi</h1>
+        <ul>
+            <?php for($i=0; $i<count($matches); $i++) {?>
+                <li><?php echo "{$matches[$i]['homeTeam']} - {$matches[$i]['visitingTeam']} | {$matches[$i]['homeTeamScore']}-{$matches[$i]['visitingTeamScore']}"; ?></li>
+            <?php }; ?>
+        </ul>
+    </body>
+</html>

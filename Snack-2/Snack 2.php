@@ -3,23 +3,20 @@
 <?php
     $message = '';
     function submit() {      
-        if(!empty($_GET['name']) && !empty($_GET['mail']) && !empty($_GET['age'])) {
-            $name = $_GET['name'];
-            $mail = $_GET['mail'];
-            $age = $_GET['age'];
-            if(strlen($name) > 3 && strpos($mail, '@') && strpos($mail,'.') && strlen($mail) > 4 && is_numeric($age) && $age > 0) {
-                return 'Successful login';
-            } else {
-                return 'Access Denied';
-            }
-        } else {
+        if(empty($_GET['name']) && empty($_GET['mail']) && empty($_GET['age'])) {
             return 'Attention one of the inputs is empty';
+            die;
         };
+        if(strlen($_GET['name']) > 3 && strpos($_GET['mail'], '@') && strpos($_GET['mail'],'.') && strlen($_GET['mail']) > 4 && is_numeric($_GET['age']) && $_GET['age'] > 0) {
+            return 'Successful login';
+        } else {
+            return 'Access Denied';
+            die;
+        }
     };
     if(isset($_GET['btnSubmit'])) {
         $message = submit();
     }
-
 ?>
 
 <!DOCTYPE html>
