@@ -7,11 +7,20 @@
             return 'Attention one of the inputs is empty';
             die;
         };
-        if(strlen($_GET['name']) > 3 && strpos($_GET['mail'], '@') && strpos($_GET['mail'],'.') && strlen($_GET['mail']) > 4 && is_numeric($_GET['age']) && $_GET['age'] > 0) {
-            return 'Successful login';
-        } else {
-            return 'Access Denied';
+        $name = $_GET['name'];
+        $mail = $_GET['mail'];
+        $age = $_GET['age'];
+        if(strlen($name) < 4) {
+            return 'Access Denied! Attention: the name must have at least 4 characters';
             die;
+        } else if(strpos($mail, '@') == false && strpos($mail,'.') == false && strlen($mail) > 4) {
+            return 'Access Denied! Warning: the formatting of the email is incorrect';
+            die;
+        } else if(is_numeric($age) == false && $age > 0) {
+            return 'Access Denied! Warning age must be a number';
+            die;
+        } else {
+            return 'Successful login';
         }
     };
     if(isset($_GET['btnSubmit'])) {
