@@ -55,6 +55,7 @@
         <title>Snack7</title>
     </head>
     <body>
+        <h1>Registro</h1>
         <?php foreach($register as $student) {?>
             <h4><?= "{$student['name']} {$student['surname']}"?></h4>
             <p>Media: <?= average($student['votes']) ?></p>
